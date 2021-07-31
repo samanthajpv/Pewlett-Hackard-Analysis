@@ -1,0 +1,21 @@
+dept_name,title,Retiring Count,Non-Retiring Count
+Customer Service,Senior Engineer,545,1245
+Customer Service,Senior Staff,3795,8554
+Customer Service,Technique Leader,64,177
+Development,Senior Engineer,12980,30384
+Development,Senior Staff,329,756
+Development,Technique Leader,1795,4322
+Finance,Senior Staff,3226,7424
+Human Resources,Senior Staff,3315,7528
+Marketing,Senior Staff,3701,8670
+Production,Senior Engineer,11256,25900
+Production,Senior Staff,390,733
+Production,Technique Leader,1597,3613
+Quality Management,Senior Engineer,3142,7248
+Quality Management,Technique Leader,437,985
+Research,Manager,1,0
+Research,Senior Engineer,664,1586
+Research,Senior Staff,3211,7008
+Research,Technique Leader,94,227
+Sales,Manager,1,0
+Sales,Senior Staff,9663,22369

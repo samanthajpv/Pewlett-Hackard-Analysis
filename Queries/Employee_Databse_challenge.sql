@@ -42,12 +42,60 @@ SELECT DISTINCT ON (e.emp_no) e.emp_no,
     t.title
 INTO mentorship_eligibility
 FROM employees AS e
-INNER JOIN dept_emp as de ON (e.emp_no = de.emp_no)
+JOIN dept_emp as de ON (e.emp_no = de.emp_no)
 JOIN titles AS t ON (e.emp_no = t.emp_no)
-WHERE 
-    (de.to_date = '9999-01-01') AND
+WHERE (de.to_date = '9999-01-01') AND
     (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 ORDER BY e.emp_no;
 
 
--- Additional Queries
+-- Additional Queries (for Summary)
+
+-- create unique titles table with department name
+SELECT d.dept_name, ut.title, COUNT(ut.emp_no) AS "count"
+INTO unique_dept_titles
+FROM unique_titles AS ut
+JOIN dept_emp AS de ON de.emp_no = ut.emp_no
+JOIN departments AS d ON d.dept_no = de.dept_no
+WHERE to_date = '9999-01-01'
+GROUP BY d.dept_name, ut.title
+ORDER BY d.dept_name, ut.title;
+
+-- get distinct titles
+SELECT DISTINCT title FROM titles;
+
+-- retiting employees with higher positions 
+SELECT DISTINCT d.dept_name, t.title, COUNT(de.emp_no) AS "count"
+INTO retiring_higher_titles
+FROM dept_emp AS de
+JOIN titles AS t ON t.emp_no = de.emp_no
+JOIN departments AS d ON d.dept_no = de.dept_no 
+JOIN employees AS e ON e.emp_no = de.emp_no
+WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31') AND
+	(t.to_date = '9999-01-01') AND 
+	(t.title in ('Senior Engineer', 'Manager', 'Senior Staff', 'Technique Leader'))
+GROUP BY d.dept_name, t.title
+ORDER BY d.dept_name, t.title;
+
+-- non-retiting employees with higher positions 
+SELECT DISTINCT d.dept_name, t.title, COUNT(de.emp_no) AS "count"
+INTO non_retiring_higher_titles
+FROM dept_emp AS de
+JOIN titles AS t ON t.emp_no = de.emp_no
+JOIN departments AS d ON d.dept_no = de.dept_no 
+JOIN employees AS e ON e.emp_no = de.emp_no
+WHERE (e.birth_date >= '1956-01-01') AND
+	(t.to_date = '9999-01-01') AND 
+	(t.title in ('Senior Engineer', 'Manager', 'Senior Staff', 'Technique Leader'))
+GROUP BY d.dept_name, t.title
+ORDER BY d.dept_name, t.title;
+
+-- join higher title tables for comparison
+SELECT rht.dept_name, rht.title, rht.count AS "Retiring Count", 
+	COALESCE(nrht.count,0) AS "Non-Retiring Count"
+INTO retiring_higher_titles_vs_nr
+FROM retiring_higher_titles AS rht
+LEFT JOIN non_retiring_higher_titles AS nrht ON
+	nrht.dept_name = rht.dept_name AND
+	nrht.title = rht.title
+ORDER BY rht.dept_name, rht.title;
