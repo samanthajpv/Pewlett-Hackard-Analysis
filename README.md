@@ -37,10 +37,15 @@ For the Mentorship Eligibility, the tables for Employees, Department Employee, a
 ## Summary 
 The upcoming "silver tsunami" in Pewlett Hackard will require a lot of strategic planning. To see how this will affect the whole organization will help the company smoothly transition employees to different roles.
 
-- How many roles will need to be filled as the "silver tsunami" begins to make an impact?
-The Retiring Titles table show that there is a huge amount of employees that will soon retire.
+- The Retiring Titles table show that there is a huge amount of employees that will soon retire. Below is the output of a query that may help give additional information. This provides the number of roles specific to each department that will need to be filled in the near future. It is important to note that these numbers are reflecting only the active employees unlike the Retiring Titles table.
+*Output file:* 
 
-- Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
-- from the active employees, get all possible combinations of departments and positions with more senior job titles.
+- As the silver tsunami approaches, the company should be able to evaluate if there are enough qualified, retirement-ready employees to mentor the next generation of Pewlett Hackard employees. Assuming that the employees with titles "Senior Engineer", "Manager", "Senior Staff", and "Technique Leader" are qualified as mentors, the output below may be of aid to the company's planning for the mentorship program. Two separate tables were created, one with the count of retiring employees, and one with those who are not yet going to retire. These tables were then joined to be able to compare the number of retiring vs non-retiring employees per department and title. 
+*Output files:*
+    -
+    -
+    -
+
+
 ## Reference
 (1) Trilogy Education Services. (2021, July). *Module 7 Challenge*. https://courses.bootcampspot.com/courses/626/assignments/13395?module_item_id=212712
