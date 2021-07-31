@@ -11,7 +11,7 @@ Pewlett Hackard is a company facing an upcoming shift in their organization due 
     - [employees.csv](https://github.com/samanthajpv/Pewlett-Hackard-Analysis/blob/9990b6072e92cb860fd6512603ac34a5752ceda0/Data/4%20-%20employees.csv)
     - [salaries.csv](https://github.com/samanthajpv/Pewlett-Hackard-Analysis/blob/9990b6072e92cb860fd6512603ac34a5752ceda0/Data/5%20-%20salaries.csv)
     - [titles.csv](https://github.com/samanthajpv/Pewlett-Hackard-Analysis/blob/9990b6072e92cb860fd6512603ac34a5752ceda0/Data/6%20-%20titles.csv)
-- [Queries](Queries/Employee_Database_challenge.sql)
+- [Queries](https://github.com/samanthajpv/Pewlett-Hackard-Analysis/blob/9990b6072e92cb860fd6512603ac34a5752ceda0/Queries/Employee_Database_challenge.sql)
 - Software:
     - QuickDBD
     - PostgreSQL 12.7
