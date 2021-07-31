@@ -85,7 +85,7 @@ The upcoming "silver tsunami" in Pewlett Hackard will require a lot of strategic
     - [retiring_higher_titles_vs_nr.csv](https://github.com/samanthajpv/Pewlett-Hackard-Analysis/blob/9990b6072e92cb860fd6512603ac34a5752ceda0/Data/Additional%20-%20retiring_higher_titles_vs_nr.csv)
 <p align="center">
     <img src="https://github.com/samanthajpv/Pewlett-Hackard-Analysis/blob/9990b6072e92cb860fd6512603ac34a5752ceda0/Additional%20Resources/retiring_vs_nonretiring.png" width="500" height="200" align="center">
-    <h5 align="center">Higher Position Count Comparison Bewtween Retiring and Non-Retiring Employees</h5>
+    <h5 align="center">Higher Position Count Comparison Between Retiring and Non-Retiring Employees</h5>
 </p>
 
 ## Reference
